@@ -1,223 +1,157 @@
-# 工具类网页平台
+<div align="center">
 
-前后端分离的工具类项目，前端使用Vue3.0，后端使用Go + PostgreSQL。
+# ✦ NiceWeb
 
-## 功能特性
+**现代前端技术展示 · 个人作品集主页**
 
-- 用户登录（账号密码，不开放注册）
-- 工具仪表板（方框网格展示工具）
-- 时间戳转换工具（时间戳与日期时间相互转换）
-- 可扩展添加新工具
-- 身份验证保护路由
+一个基于 Vue 3 + TypeScript + Vite 构建的炫酷静态首页，展示现代前端技术的视觉表现力。
+
+[English](./README.en.md) · 中文
+
+</div>
+
+---
+
+## 项目简介
+
+NiceWeb 是一个纯前端静态页面，无需后端服务，所有数据使用 Mock 数据。项目集中展示了多种现代前端视觉特效与交互技术，可作为个人主页、作品集展示或前端技术探索的参考。
+
+### 主要特性
+
+- 🌌 **极光背景** — Canvas 实时渲染的多色光团动画
+- ✨ **粒子系统** — 100 个粒子 + 鼠标排斥力 + 粒子间连线
+- 🔮 **浮动几何图形** — 随机漂浮的三角、圆、方块、环形
+- 🪞 **毛玻璃效果** — Glassmorphism 导航栏与卡片
+- 🎴 **3D 倾斜卡片** — 鼠标跟随的 `perspective + rotateX/Y` 效果
+- ⌨️ **打字机效果** — Hero 区域标题逐字打出 + 职业轮播
+- ✏️ **自定义光标** — 跟随鼠标、悬停放大、点击收缩
+- 📊 **滚动进度条** — 顶部渐变进度条 + 光晕尾迹
+- 🌓 **明暗主题切换** — 支持 Light / Dark 双主题
+- 📱 **响应式设计** — 适配桌面与移动端
+- 🎭 **滚动触发动画** — IntersectionObserver 驱动的渐入效果
+- 🔢 **数字计数器** — 缓动函数动画，滚动到视口时触发
 
 ## 技术栈
 
-### 前端
-- Vue 3.0
-- Vue Router
-- Pinia（状态管理）
-- Axios（HTTP客户端）
-- Vite（构建工具）
+| 技术 | 用途 |
+|------|------|
+| [Vue 3](https://vuejs.org/) | 响应式 UI 框架 |
+| [TypeScript](https://www.typescriptlang.org/) | 类型安全 |
+| [Vite](https://vitejs.dev/) | 构建工具与开发服务器 |
+| Canvas API | 粒子系统与极光背景 |
+| CSS Custom Properties | 主题系统与样式管理 |
+| IntersectionObserver | 滚动触发动画 |
 
-### 后端
-- Go
-- Gin（Web框架）
-- JWT（身份验证）
-- PostgreSQL（数据库）
-- bcrypt（密码哈希）
+> **零运行时依赖** — 除 Vue 3 外不依赖任何第三方库。
 
 ## 快速开始
 
 ### 环境要求
+
 - Node.js 18+
-- Go 1.21+
-- Docker & Docker Compose（推荐）
-- PostgreSQL 15（可选）
+- npm / yarn / pnpm
 
-### 1. 启动数据库
-
-使用 Docker Compose 启动 PostgreSQL：
+### 安装与运行
 
 ```bash
-docker-compose up -d postgres
-```
+# 克隆项目
+git clone https://github.com/winddsnow/niceweb.git
+cd niceweb
 
-数据库将运行在 `localhost:5432`，默认用户/密码为 `postgres/postgres`。
-
-Adminer 数据库管理界面运行在 `http://localhost:8081`。
-
-### 2. 后端设置
-
-进入后端目录：
-
-```bash
-cd backend
-```
-
-安装 Go 依赖：
-
-```bash
-go mod download
-```
-
-运行后端：
-
-```bash
-go run cmd/main.go
-```
-
-后端将运行在 `http://localhost:8080`。
-
-环境变量配置（在 `.env` 文件中）：
-```
-DB_HOST=localhost
-DB_PORT=5432
-DB_USER=postgres
-DB_PASSWORD=postgres
-DB_NAME=tool_web
-PORT=8080
-JWT_SECRET=your-secret-key-change-in-production
-```
-
-### 3. 前端设置
-
-进入前端目录：
-
-```bash
-cd frontend
-```
-
-安装依赖：
-
-```bash
+# 安装依赖
 npm install
-```
 
-启动开发服务器：
-
-```bash
+# 启动开发服务器
 npm run dev
 ```
 
-前端将运行在 `http://localhost:3000`。
+浏览器访问 `http://localhost:3100`。
 
-### 4. 访问应用
+### 构建生产版本
 
-打开浏览器访问 `http://localhost:3000`。
+```bash
+npm run build
+```
 
-使用以下账号登录：
-- 用户名：admin，密码：admin123
-- 用户名：user1，密码：admin123
+构建产物输出到 `dist/` 目录。
+
+### 预览生产版本
+
+```bash
+npm run preview
+```
 
 ## 项目结构
 
 ```
-├── frontend/                 # 前端项目
-│   ├── src/
-│   │   ├── views/           # 页面组件
-│   │   ├── router/          # 路由配置
-│   │   └── main.js          # 入口文件
-│   ├── package.json
-│   └── vite.config.js
-├── backend/                  # 后端项目
-│   ├── cmd/                 # 入口文件
-│   ├── internal/            # 内部包
-│   │   ├── auth/           # 身份验证
-│   │   ├── database/       # 数据库连接
-│   │   ├── handlers/       # 请求处理器
-│   │   ├── middleware/     # 中间件
-│   │   ├── models/         # 数据模型
-│   │   └── tools/          # 工具类
-│   ├── config/             # 配置文件
-│   └── go.mod
-├── config/                  # 共享配置
-├── docker-compose.yml       # Docker配置
+niceweb/
+├── public/
+│   └── vite.svg                 # Favicon
+├── src/
+│   ├── components/
+│   │   ├── AboutSection.vue     # 关于我 — 玻璃拟态卡片
+│   │   ├── AuroraBackground.vue # 极光背景 — Canvas 渲染
+│   │   ├── CustomCursor.vue     # 自定义光标 — 跟随特效
+│   │   ├── FloatingShapes.vue   # 浮动几何 — 随机漂浮图形
+│   │   ├── FooterSection.vue    # 页脚 — 博客链接 + 备案信息
+│   │   ├── HeroSection.vue      # Hero — 粒子 + 打字机 + 统计
+│   │   ├── NavHeader.vue        # 导航 — 毛玻璃 + 主题切换
+│   │   ├── ProjectsSection.vue  # 项目展示 — 3D 倾斜卡片
+│   │   ├── ScrollProgress.vue   # 滚动进度条
+│   │   ├── SkillsSection.vue    # 技能 — 动画进度条
+│   │   ├── StatsSection.vue     # 数据统计 — 数字滚动
+│   │   └── TimelineSection.vue  # 时间轴 — 工作经历
+│   ├── styles/
+│   │   └── global.css           # 全局样式 + 主题变量
+│   ├── data.ts                  # Mock 数据
+│   ├── App.vue                  # 根组件
+│   └── main.ts                  # 入口文件
+├── index.html
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+├── LICENSE                      # MIT
 └── README.md
 ```
 
-## API 接口
+## 自定义
 
-### 身份验证
+### 修改内容
 
-#### 登录
-```
-POST /api/auth/login
-```
+编辑 `src/data.ts` 即可自定义：
 
-请求体：
-```json
-{
-  "username": "admin",
-  "password": "admin123"
+- **技能列表** — 修改 `skills` 数组
+- **项目展示** — 修改 `projects` 数组
+- **数据统计** — 修改 `stats` 数组
+- **工作经历** — 修改 `timeline` 数组
+- **导航菜单** — 修改 `navItems` 数组
+
+### 修改主题色
+
+编辑 `src/styles/global.css` 中的 CSS 变量：
+
+```css
+:root {
+  --accent-1: #6366f1;       /* 主色调 */
+  --accent-2: #8b5cf6;       /* 辅助色 */
+  --accent-pink: #ec4899;    /* 强调色 */
+  --accent-gradient: linear-gradient(135deg, #6366f1, #a78bfa, #f472b6);
 }
 ```
 
-响应：
-```json
-{
-  "token": "jwt-token",
-  "user": {
-    "id": 1,
-    "username": "admin",
-    "email": "admin@example.com",
-    "role": "admin"
-  }
-}
-```
+## 浏览器支持
 
-#### 获取当前用户信息
-```
-GET /api/auth/me
-```
-需要 Bearer Token 认证。
+| 浏览器 | 版本 |
+|--------|------|
+| Chrome | 90+ |
+| Firefox | 90+ |
+| Safari | 14+ |
+| Edge | 90+ |
 
-### 工具接口
+## 博客
 
-#### 时间戳转日期
-```
-POST /api/tools/timestamp/to-date
-```
-请求体：
-```json
-{
-  "timestamp": 1700000000
-}
-```
-
-#### 日期转时间戳
-```
-POST /api/tools/timestamp/to-timestamp
-```
-请求体：
-```json
-{
-  "date": "2023-11-15 08:13:20"
-}
-```
-
-## 添加新工具
-
-1. 在 `frontend/src/views/` 创建新工具页面组件
-2. 在 `frontend/src/router/index.js` 添加路由
-3. 在 `frontend/src/views/Dashboard.vue` 的 `tools` 数组中添加工具信息
-4. 在 `backend/internal/handlers/tools.go` 添加后端处理逻辑
-5. 在 `backend/cmd/main.go` 注册新的 API 路由
-
-## 安全性
-
-- 所有工具页面需要身份验证
-- JWT Token 用于 API 认证
-- 密码使用 bcrypt 哈希存储
-- CORS 配置限制前端域名
-
-## 后续开发
-
-- 添加更多工具（JSON格式化、Base64编码、正则测试等）
-- 用户权限管理
-- 工具使用统计
-- 界面主题切换
-- 移动端适配
+更多技术分享与项目实战：[www.blog.winddsnow.top](https://www.blog.winddsnow.top)
 
 ## 许可证
 
-MIT
+[MIT License](./LICENSE) © 2026 [winddsnow](https://www.blog.winddsnow.top)
