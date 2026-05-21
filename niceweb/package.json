@@ -1,12 +1,30 @@
 {
   "name": "niceweb",
-  "private": true,
+  "private": false,
   "version": "1.0.0",
+  "description": "A stunning modern portfolio homepage built with Vue 3 + TypeScript + Vite, featuring aurora backgrounds, particle systems, glassmorphism, 3D tilt cards, and more.",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview"
+  },
+  "keywords": [
+    "vue3",
+    "portfolio",
+    "homepage",
+    "glassmorphism",
+    "particle-system",
+    "typescript",
+    "vite",
+    "modern-web"
+  ],
+  "author": "winddsnow",
+  "license": "MIT",
+  "homepage": "https://www.blog.winddsnow.top",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/winddsnow/niceweb"
   },
   "dependencies": {
     "vue": "^3.4.0"
