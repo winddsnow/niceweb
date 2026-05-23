@@ -33,14 +33,14 @@ NiceWeb 是一个纯前端静态页面，无需后端服务，所有数据使用
 
 ## 技术栈
 
-| 技术 | 用途 |
-|------|------|
-| [Vue 3](https://vuejs.org/) | 响应式 UI 框架 |
-| [TypeScript](https://www.typescriptlang.org/) | 类型安全 |
-| [Vite](https://vitejs.dev/) | 构建工具与开发服务器 |
-| Canvas API | 粒子系统与极光背景 |
-| CSS Custom Properties | 主题系统与样式管理 |
-| IntersectionObserver | 滚动触发动画 |
+| 技术                                          | 用途                 |
+| --------------------------------------------- | -------------------- |
+| [Vue 3](https://vuejs.org/)                   | 响应式 UI 框架       |
+| [TypeScript](https://www.typescriptlang.org/) | 类型安全             |
+| [Vite](https://vitejs.dev/)                   | 构建工具与开发服务器 |
+| Canvas API                                    | 粒子系统与极光背景   |
+| CSS Custom Properties                         | 主题系统与样式管理   |
+| IntersectionObserver                          | 滚动触发动画         |
 
 > **零运行时依赖** — 除 Vue 3 外不依赖任何第三方库。
 
@@ -132,21 +132,21 @@ niceweb/
 
 ```css
 :root {
-  --accent-1: #6366f1;       /* 主色调 */
-  --accent-2: #8b5cf6;       /* 辅助色 */
-  --accent-pink: #ec4899;    /* 强调色 */
+  --accent-1: #6366f1; /* 主色调 */
+  --accent-2: #8b5cf6; /* 辅助色 */
+  --accent-pink: #ec4899; /* 强调色 */
   --accent-gradient: linear-gradient(135deg, #6366f1, #a78bfa, #f472b6);
 }
 ```
 
 ## 浏览器支持
 
-| 浏览器 | 版本 |
-|--------|------|
-| Chrome | 90+ |
-| Firefox | 90+ |
-| Safari | 14+ |
-| Edge | 90+ |
+| 浏览器  | 版本 |
+| ------- | ---- |
+| Chrome  | 90+  |
+| Firefox | 90+  |
+| Safari  | 14+  |
+| Edge    | 90+  |
 
 ## 博客
 

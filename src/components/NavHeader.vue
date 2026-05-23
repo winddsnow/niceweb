@@ -35,7 +35,11 @@ function scrollTo(href: string) {
         >
           {{ item.label }}
         </a>
-        <button class="theme-toggle hoverable" @click="toggleTheme" :title="isDark ? '浅色模式' : '深色模式'">
+        <button
+          class="theme-toggle hoverable"
+          :title="isDark ? '浅色模式' : '深色模式'"
+          @click="toggleTheme"
+        >
           <span v-if="isDark" class="theme-icon">☀️</span>
           <span v-else class="theme-icon">🌙</span>
         </button>
@@ -62,7 +66,7 @@ function scrollTo(href: string) {
   border-bottom: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
 }
-[data-theme="dark"] .nav.scrolled {
+[data-theme='dark'] .nav.scrolled {
   background: rgba(10, 10, 15, 0.85);
 }
 .nav-inner {
@@ -88,8 +92,13 @@ function scrollTo(href: string) {
   animation: pulse-glow 3s ease-in-out infinite;
 }
 @keyframes pulse-glow {
-  0%, 100% { filter: drop-shadow(0 0 4px rgba(99,102,241,0.4)); }
-  50% { filter: drop-shadow(0 0 12px rgba(99,102,241,0.8)); }
+  0%,
+  100% {
+    filter: drop-shadow(0 0 4px rgba(99, 102, 241, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(99, 102, 241, 0.8));
+  }
 }
 .logo-text {
   letter-spacing: -0.02em;
@@ -148,6 +157,8 @@ function scrollTo(href: string) {
 }
 
 @media (max-width: 768px) {
-  .nav-links { display: none; }
+  .nav-links {
+    display: none;
+  }
 }
 </style>

@@ -6,7 +6,7 @@
 
 A stunning static homepage built with Vue 3 + TypeScript + Vite, demonstrating the visual power of modern frontend technologies.
 
-中文 · [English](./README.en.md)
+[中文](./README.md) · English
 
 </div>
 
@@ -33,14 +33,14 @@ NiceWeb is a pure frontend static page with no backend dependencies — all data
 
 ## Tech Stack
 
-| Technology | Purpose |
-|------------|---------|
-| [Vue 3](https://vuejs.org/) | Reactive UI framework |
-| [TypeScript](https://www.typescriptlang.org/) | Type safety |
-| [Vite](https://vitejs.dev/) | Build tool & dev server |
-| Canvas API | Particle system & aurora background |
-| CSS Custom Properties | Theming & style management |
-| IntersectionObserver | Scroll-triggered animations |
+| Technology                                    | Purpose                             |
+| --------------------------------------------- | ----------------------------------- |
+| [Vue 3](https://vuejs.org/)                   | Reactive UI framework               |
+| [TypeScript](https://www.typescriptlang.org/) | Type safety                         |
+| [Vite](https://vitejs.dev/)                   | Build tool & dev server             |
+| Canvas API                                    | Particle system & aurora background |
+| CSS Custom Properties                         | Theming & style management          |
+| IntersectionObserver                          | Scroll-triggered animations         |
 
 > **Zero runtime dependencies** — No third-party libraries beyond Vue 3.
 
@@ -132,9 +132,9 @@ Edit CSS variables in `src/styles/global.css`:
 
 ```css
 :root {
-  --accent-1: #6366f1;       /* Primary */
-  --accent-2: #8b5cf6;       /* Secondary */
-  --accent-pink: #ec4899;    /* Accent */
+  --accent-1: #6366f1; /* Primary */
+  --accent-2: #8b5cf6; /* Secondary */
+  --accent-pink: #ec4899; /* Accent */
   --accent-gradient: linear-gradient(135deg, #6366f1, #a78bfa, #f472b6);
 }
 ```
@@ -142,7 +142,7 @@ Edit CSS variables in `src/styles/global.css`:
 ## Browser Support
 
 | Browser | Version |
-|---------|---------|
+| ------- | ------- |
 | Chrome  | 90+     |
 | Firefox | 90+     |
 | Safari  | 14+     |

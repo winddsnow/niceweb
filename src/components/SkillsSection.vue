@@ -7,8 +7,10 @@ const visible = ref(false)
 
 onMounted(() => {
   const obs = new IntersectionObserver(
-    ([e]) => { if (e.isIntersecting) visible.value = true },
-    { threshold: 0.15 }
+    ([e]) => {
+      if (e.isIntersecting) visible.value = true
+    },
+    { threshold: 0.15 },
   )
   if (sectionRef.value) obs.observe(sectionRef.value)
 })
@@ -19,9 +21,7 @@ onMounted(() => {
     <div class="section-container">
       <div class="skills-header fade-up" :class="{ visible }">
         <h2 class="section-title">技术 <span class="gradient-text">栈</span></h2>
-        <p class="section-subtitle">
-          持续学习，不断精进。以下是主要的技术能力分布。
-        </p>
+        <p class="section-subtitle">持续学习，不断精进。以下是主要的技术能力分布。</p>
       </div>
       <div class="skills-grid">
         <div
@@ -103,7 +103,7 @@ onMounted(() => {
   width: 0;
   transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
-  box-shadow: 0 0 12px rgba(99,102,241,0.2);
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.2);
 }
 .skill-glow {
   position: absolute;
@@ -119,6 +119,8 @@ onMounted(() => {
 }
 .skill-fill.animate ~ .skill-glow {
   opacity: 0.5;
-  transition: left 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease 1.5s;
+  transition:
+    left 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.6s ease 1.5s;
 }
 </style>

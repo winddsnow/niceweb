@@ -40,7 +40,7 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
   top: -4px;
   width: 60px;
   height: 12px;
-  background: radial-gradient(ellipse, rgba(99,102,241,0.5), transparent);
+  background: radial-gradient(ellipse, rgba(99, 102, 241, 0.5), transparent);
   border-radius: 50%;
   transform: translateX(-50%);
   filter: blur(4px);
