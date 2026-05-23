@@ -24,13 +24,13 @@
   --radius-md: 12px;
   --radius-lg: 20px;
   --radius-xl: 28px;
-  --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
-  --shadow-md: 0 8px 30px rgba(0,0,0,0.06);
-  --shadow-lg: 0 20px 60px rgba(0,0,0,0.08);
-  --shadow-glow: 0 0 40px rgba(99,102,241,0.12);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.08);
+  --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.12);
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
   --bg-primary: #0a0a0f;
   --bg-secondary: #12121a;
   --bg-card: rgba(255, 255, 255, 0.03);
@@ -42,13 +42,15 @@
   --text-muted: #55556a;
   --glass-bg: rgba(255, 255, 255, 0.04);
   --glass-border: rgba(255, 255, 255, 0.08);
-  --shadow-sm: 0 2px 8px rgba(0,0,0,0.2);
-  --shadow-md: 0 8px 30px rgba(0,0,0,0.3);
-  --shadow-lg: 0 20px 60px rgba(0,0,0,0.4);
-  --shadow-glow: 0 0 40px rgba(99,102,241,0.2);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.2);
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -61,7 +63,12 @@ html {
 }
 
 body {
-  font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family:
+    'Inter',
+    'Noto Sans SC',
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
   background: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
@@ -70,10 +77,17 @@ body {
   cursor: none;
 }
 
-a, button { cursor: none; }
+a,
+button {
+  cursor: none;
+}
 
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
 ::-webkit-scrollbar-thumb {
   background: rgba(99, 102, 241, 0.3);
   border-radius: 3px;
@@ -114,8 +128,9 @@ a, button { cursor: none; }
 .fade-up {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .fade-up.visible {
   opacity: 1;
@@ -139,17 +154,34 @@ a, button { cursor: none; }
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
 }
 
 @keyframes gradient-shift {
-  0%, 100% { background-position: 0% center; }
-  50% { background-position: 100% center; }
+  0%,
+  100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
 }
 
 @media (max-width: 768px) {
-  .section-container { padding: 0 16px; }
-  body { cursor: auto; }
-  a, button { cursor: pointer; }
+  .section-container {
+    padding: 0 16px;
+  }
+  body {
+    cursor: auto;
+  }
+  a,
+  button {
+    cursor: pointer;
+  }
 }

@@ -6,8 +6,10 @@ const visible = ref(false)
 
 onMounted(() => {
   const obs = new IntersectionObserver(
-    ([e]) => { if (e.isIntersecting) visible.value = true },
-    { threshold: 0.15 }
+    ([e]) => {
+      if (e.isIntersecting) visible.value = true
+    },
+    { threshold: 0.15 },
   )
   if (sectionRef.value) obs.observe(sectionRef.value)
 })
@@ -92,7 +94,7 @@ const features = [
   right: -50%;
   width: 200px;
   height: 200px;
-  background: radial-gradient(circle, rgba(99,102,241,0.1), transparent 70%);
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.1), transparent 70%);
   border-radius: 50%;
   transition: all 0.6s ease;
   pointer-events: none;

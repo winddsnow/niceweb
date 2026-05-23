@@ -7,8 +7,10 @@ const visible = ref(false)
 
 onMounted(() => {
   const obs = new IntersectionObserver(
-    ([e]) => { if (e.isIntersecting) visible.value = true },
-    { threshold: 0.15 }
+    ([e]) => {
+      if (e.isIntersecting) visible.value = true
+    },
+    { threshold: 0.15 },
   )
   if (sectionRef.value) obs.observe(sectionRef.value)
 })
@@ -19,9 +21,7 @@ onMounted(() => {
     <div class="section-container">
       <div class="timeline-header fade-up" :class="{ visible }">
         <h2 class="section-title">工作 <span class="gradient-text">经历</span></h2>
-        <p class="section-subtitle">
-          每一段经历都是成长路上的重要里程碑。
-        </p>
+        <p class="section-subtitle">每一段经历都是成长路上的重要里程碑。</p>
       </div>
       <div class="timeline">
         <div class="timeline-line" />
@@ -94,7 +94,7 @@ onMounted(() => {
   transition: all 0.3s ease;
 }
 .timeline-item:hover .timeline-dot {
-  box-shadow: 0 0 16px rgba(99,102,241,0.5);
+  box-shadow: 0 0 16px rgba(99, 102, 241, 0.5);
   background: var(--accent-1);
   transform: translateX(-50%) scale(1.3);
 }
@@ -128,13 +128,17 @@ onMounted(() => {
 }
 
 @media (max-width: 768px) {
-  .timeline-line { left: 20px; }
+  .timeline-line {
+    left: 20px;
+  }
   .timeline-item.left,
   .timeline-item.right {
     padding-left: 50px;
     padding-right: 0;
     justify-content: flex-start;
   }
-  .timeline-dot { left: 20px; }
+  .timeline-dot {
+    left: 20px;
+  }
 }
 </style>

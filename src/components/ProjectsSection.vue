@@ -9,8 +9,10 @@ const cardRefs = ref<HTMLElement[]>([])
 
 onMounted(() => {
   const obs = new IntersectionObserver(
-    ([e]) => { if (e.isIntersecting) visible.value = true },
-    { threshold: 0.1 }
+    ([e]) => {
+      if (e.isIntersecting) visible.value = true
+    },
+    { threshold: 0.1 },
   )
   if (sectionRef.value) obs.observe(sectionRef.value)
 })
@@ -38,15 +40,17 @@ function onMouseLeave(idx: number) {
     <div class="section-container">
       <div class="projects-header fade-up" :class="{ visible }">
         <h2 class="section-title">精选 <span class="gradient-text">项目</span></h2>
-        <p class="section-subtitle">
-          每个项目都是一次技术探索与实践的结晶。
-        </p>
+        <p class="section-subtitle">每个项目都是一次技术探索与实践的结晶。</p>
       </div>
       <div class="projects-grid">
         <div
           v-for="(p, i) in projects"
           :key="p.title"
-          :ref="el => { if (el) cardRefs[i] = el as HTMLElement }"
+          :ref="
+            (el) => {
+              if (el) cardRefs[i] = el as HTMLElement
+            }
+          "
           class="project-card glass-card fade-up"
           :class="{ visible, hovered: hoveredIdx === i }"
           :style="{ transitionDelay: `${0.08 + i * 0.08}s` }"
@@ -91,7 +95,9 @@ function onMouseLeave(idx: number) {
   min-height: 280px;
   display: flex;
   flex-direction: column;
-  transition: transform 0.15s ease, box-shadow 0.4s ease;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.4s ease;
   will-change: transform;
 }
 .project-bg {
@@ -156,12 +162,7 @@ function onMouseLeave(idx: number) {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255,255,255,0.08),
-    transparent
-  );
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
   transition: left 0.7s ease;
   pointer-events: none;
 }
@@ -173,7 +174,9 @@ function onMouseLeave(idx: number) {
   inset: 0;
   border-radius: var(--radius-lg);
   padding: 1px;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   opacity: 0;

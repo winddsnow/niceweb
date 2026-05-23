@@ -32,8 +32,12 @@ function onMouseOver(e: MouseEvent) {
   if (t.closest('a, button, .hoverable')) isHovering.value = true
 }
 
-function onMouseDown() { isPressed.value = true }
-function onMouseUp() { isPressed.value = false }
+function onMouseDown() {
+  isPressed.value = true
+}
+function onMouseUp() {
+  isPressed.value = false
+}
 
 onMounted(() => {
   document.addEventListener('mousemove', onMouseMove)
@@ -53,7 +57,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="cursor-wrapper" v-show="visible">
+  <div v-show="visible" class="cursor-wrapper">
     <div
       class="cursor-dot"
       :class="{ pressed: isPressed }"
@@ -85,7 +89,10 @@ onUnmounted(() => {
   border-radius: 50%;
   background: var(--accent-1);
   mix-blend-mode: difference;
-  transition: width 0.2s, height 0.2s, background 0.2s;
+  transition:
+    width 0.2s,
+    height 0.2s,
+    background 0.2s;
   will-change: transform;
 }
 .cursor-dot.pressed {
@@ -99,10 +106,11 @@ onUnmounted(() => {
   height: 40px;
   border-radius: 50%;
   border: 1.5px solid rgba(99, 102, 241, 0.4);
-  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-              height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.3s,
-              background 0.3s;
+  transition:
+    width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s,
+    background 0.3s;
   will-change: transform;
 }
 .cursor-ring.hovering {
@@ -121,13 +129,15 @@ onUnmounted(() => {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(99,102,241,0.6), transparent);
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.6), transparent);
   filter: blur(2px);
   will-change: transform;
   opacity: 0.5;
 }
 
 @media (max-width: 768px) {
-  .cursor-wrapper { display: none !important; }
+  .cursor-wrapper {
+    display: none !important;
+  }
 }
 </style>

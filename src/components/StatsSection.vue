@@ -14,7 +14,7 @@ onMounted(() => {
         animateCounters()
       }
     },
-    { threshold: 0.3 }
+    { threshold: 0.3 },
   )
   if (sectionRef.value) obs.observe(sectionRef.value)
 })
@@ -44,14 +44,8 @@ function formatNum(n: number): string {
   <section ref="sectionRef" class="stats">
     <div class="section-container">
       <div class="stats-grid fade-up" :class="{ visible }">
-        <div
-          v-for="(s, i) in stats"
-          :key="s.label"
-          class="stat-card"
-        >
-          <span class="stat-number">
-            {{ formatNum(counts[i]) }}{{ s.suffix }}
-          </span>
+        <div v-for="(s, i) in stats" :key="s.label" class="stat-card">
+          <span class="stat-number"> {{ formatNum(counts[i]) }}{{ s.suffix }} </span>
           <span class="stat-label-text">{{ s.label }}</span>
         </div>
       </div>

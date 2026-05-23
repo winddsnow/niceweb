@@ -62,10 +62,30 @@ export const stats = [
 ]
 
 export const timeline = [
-  { year: '2024', title: '全栈架构师', company: '某科技公司', desc: '主导微前端架构升级，支撑千万级用户' },
-  { year: '2023', title: '高级前端工程师', company: '某互联网公司', desc: '负责核心产品前端架构与性能优化' },
-  { year: '2022', title: '前端技术专家', company: '某创业公司', desc: '从零搭建前端团队与工程化体系' },
-  { year: '2021', title: '前端开发工程师', company: '某软件公司', desc: '参与多个大型 B 端项目开发' },
+  {
+    year: '2024',
+    title: '全栈架构师',
+    company: '某科技公司',
+    desc: '主导微前端架构升级，支撑千万级用户',
+  },
+  {
+    year: '2023',
+    title: '高级前端工程师',
+    company: '某互联网公司',
+    desc: '负责核心产品前端架构与性能优化',
+  },
+  {
+    year: '2022',
+    title: '前端技术专家',
+    company: '某创业公司',
+    desc: '从零搭建前端团队与工程化体系',
+  },
+  {
+    year: '2021',
+    title: '前端开发工程师',
+    company: '某软件公司',
+    desc: '参与多个大型 B 端项目开发',
+  },
 ]
 
 export const navItems = [

@@ -2,10 +2,14 @@
 import { ref, onMounted } from 'vue'
 
 interface Shape {
-  x: number; y: number; size: number
-  rotation: number; speed: number
+  x: number
+  y: number
+  size: number
+  rotation: number
+  speed: number
   type: 'circle' | 'triangle' | 'square' | 'ring'
-  opacity: number; hue: number
+  opacity: number
+  hue: number
 }
 
 const shapes = ref<Shape[]>([])

@@ -1,5 +1,4 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <footer class="footer">
@@ -10,10 +9,21 @@
           <div class="cta-content">
             <h3 class="cta-title">访问我的博客</h3>
             <p class="cta-desc">更多技术分享、项目实战与思考记录</p>
-            <a href="https://www.blog.winddsnow.top" target="_blank" rel="noopener" class="cta-btn hoverable">
+            <a
+              href="https://www.blog.winddsnow.top"
+              target="_blank"
+              rel="noopener"
+              class="cta-btn hoverable"
+            >
               <span>www.blog.winddsnow.top</span>
               <svg width="18" height="18" viewBox="0 0 16 16" fill="none">
-                <path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path
+                  d="M4 12L12 4M12 4H6M12 4v6"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
             </a>
           </div>
@@ -35,7 +45,12 @@
           <div class="footer-col">
             <h4 class="footer-col-title">链接</h4>
             <a href="https://github.com" target="_blank" class="footer-link">GitHub</a>
-            <a href="https://www.blog.winddsnow.top" target="_blank" class="footer-link highlight-link">博客 ↗</a>
+            <a
+              href="https://www.blog.winddsnow.top"
+              target="_blank"
+              class="footer-link highlight-link"
+              >博客 ↗</a
+            >
           </div>
         </div>
       </div>
@@ -46,7 +61,12 @@
         <span class="footer-copy">
           © {{ new Date().getFullYear() }} NiceWeb · Built with Vue 3 + TypeScript + Vite
         </span>
-        <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener" class="icp-link hoverable">
+        <a
+          href="https://beian.miit.gov.cn/"
+          target="_blank"
+          rel="noopener"
+          class="icp-link hoverable"
+        >
           粤ICP备2025511523号
         </a>
       </div>
@@ -77,7 +97,7 @@
   background: var(--accent-gradient);
   opacity: 0.08;
 }
-[data-theme="dark"] .cta-bg {
+[data-theme='dark'] .cta-bg {
   opacity: 0.12;
 }
 .cta-content {
@@ -204,9 +224,20 @@
 }
 
 @media (max-width: 768px) {
-  .footer-top { flex-direction: column; gap: 32px; }
-  .footer-links-group { gap: 32px; }
-  .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
-  .cta-card { padding: 40px 24px; }
+  .footer-top {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .footer-links-group {
+    gap: 32px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+  .cta-card {
+    padding: 40px 24px;
+  }
 }
 </style>

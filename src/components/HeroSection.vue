@@ -24,7 +24,10 @@ function typeRole() {
     charIdx.value++
     currentRole.value = role.slice(0, charIdx.value)
     if (charIdx.value === role.length) {
-      setTimeout(() => { isDeleting.value = true; typeRole() }, 2000)
+      setTimeout(() => {
+        isDeleting.value = true
+        typeRole()
+      }, 2000)
       return
     }
     roleTimer = setTimeout(typeRole, 100)
@@ -62,11 +65,16 @@ onMounted(() => {
   const canvas = canvasRef.value
   if (!canvas) return
   const ctx = canvas.getContext('2d')!
-  let w = canvas.width = window.innerWidth
-  let h = canvas.height = window.innerHeight
+  let w = (canvas.width = window.innerWidth)
+  let h = (canvas.height = window.innerHeight)
   const particles: Array<{
-    x: number; y: number; vx: number; vy: number
-    size: number; opacity: number; hue: number
+    x: number
+    y: number
+    vx: number
+    vy: number
+    size: number
+    opacity: number
+    hue: number
   }> = []
   const mouse = { x: w / 2, y: h / 2 }
 
@@ -108,7 +116,9 @@ onMounted(() => {
 
       ctx.beginPath()
       ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2)
-      const isLight = window.matchMedia('(prefers-color-scheme: light)').matches || !document.documentElement.hasAttribute('data-theme')
+      const isLight =
+        window.matchMedia('(prefers-color-scheme: light)').matches ||
+        !document.documentElement.hasAttribute('data-theme')
       ctx.fillStyle = isLight
         ? `hsla(${p.hue}, 60%, 50%, ${p.opacity * 0.7})`
         : `hsla(${p.hue}, 70%, 70%, ${p.opacity})`
@@ -167,13 +177,23 @@ onMounted(() => {
         <span class="role-prefix">▸</span>
         {{ currentRole }}<span class="role-cursor">_</span>
       </p>
-      <p class="hero-desc">
-        专注于 Vue / React / Node.js / 可视化 / 创新技术
-      </p>
+      <p class="hero-desc">专注于 Vue / React / Node.js / 可视化 / 创新技术</p>
       <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary hoverable" @click.prevent="scrollTo('#projects')">
+        <a
+          href="#projects"
+          class="btn btn-primary hoverable"
+          @click.prevent="scrollTo('#projects')"
+        >
           <span>查看作品</span>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path
+              d="M3 8h10M9 4l4 4-4 4"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
         </a>
         <a href="#about" class="btn btn-ghost hoverable" @click.prevent="scrollTo('#about')">
           了解更多
@@ -279,8 +299,13 @@ onMounted(() => {
   animation: cursor-blink 0.8s step-end infinite;
 }
 @keyframes cursor-blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 .hero-role {
   font-size: 1.3rem;
@@ -403,8 +428,14 @@ onMounted(() => {
   animation: scroll-anim 1.5s ease-in-out infinite;
 }
 @keyframes scroll-anim {
-  0% { transform: translateY(0); opacity: 1; }
-  100% { transform: translateY(12px); opacity: 0; }
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(12px);
+    opacity: 0;
+  }
 }
 .scroll-text {
   font-size: 0.65rem;
